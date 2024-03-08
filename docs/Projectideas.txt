@@ -1,0 +1,6 @@
+- Mobbing erkennen in Social media text evt. Bilder/memes
+- Bilderkennung für blinde image to speech
+- Speech to text für taube
+- Mooderkennung anhand von gesicht/ vorstufe für automatisierte psychologische analysen
+       Datasets:  https://analyticsindiamag.com/top-8-datasets-available-for-emotion-detection/
+       Beispiel:  https://medium.com/analytics-vidhya/building-a-real-time-emotion-detector-towards-machine-with-e-q-c20b17f89220
