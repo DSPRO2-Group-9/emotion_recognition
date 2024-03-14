@@ -1,0 +1,1 @@
+This folder contains jupyter notebooks for data cleaning, data exploration, modeling and evaluation of models
