@@ -5,3 +5,5 @@
        Datasets:  https://analyticsindiamag.com/top-8-datasets-available-for-emotion-detection/
        Beispiel:  https://medium.com/analytics-vidhya/building-a-real-time-emotion-detector-towards-machine-with-e-q-c20b17f89220
        Beispiel:  https://github.com/victor369basu/facial-emotion-recognition
+
+Jotform: https://eu.jotform.com/pricing/?utm_source=newUserDesingTest-pricing-nav&utm_medium=website&utm_content=detest-maker&utm_campaign=newUserDesingTest
