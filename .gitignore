@@ -160,3 +160,4 @@ cython_debug/
 #.idea/
 data/
 notebook/modeling/wandb/
+notebook/modeling/Experiments/wandb/
