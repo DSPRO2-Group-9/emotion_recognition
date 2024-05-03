@@ -1,0 +1,15 @@
+data augmentation:
+--flip image
+--little bit of rotation
+--shear image processing
+--white balance, saturation
+
+
+feature extraction:
+--freeze all layers except final layer
+
+fine tuning
+--change weights a bit
+
+
+balance datasets with each other
