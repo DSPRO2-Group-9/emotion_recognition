@@ -1,17 +1,18 @@
 
 
-from tensorflow.keras.models import load_model
+from tensorflow.keras.models import load_model # type: ignore
 
-from tensorflow.keras.preprocessing.image import img_to_array
+from tensorflow.keras.preprocessing.image import img_to_array # type: ignore
 
 
 import cv2
 import numpy as np
 
-face_classifier = cv2.CascadeClassifier("C:/Emotion_Recognition/notebook/modeling/Kamera/haarcascade_frontalface_default.xml")
-classifier =load_model("C:/Emotion_Recognition/model/test_model.keras")
+face_classifier = cv2.CascadeClassifier("/Emotion_Recognition/src/kamera/haarcascade_frontalface_default.xml")
+classifier =load_model("/Emotion_Recognition/model/test_model.keras")
 
 emotion_labels = ['Angry','Disgust','Fear','Happy','Neutral', 'Sad', 'Surprise']
+
 
 cap = cv2.VideoCapture(0)
 
