@@ -25,7 +25,7 @@ while True:
     faces = face_classifier.detectMultiScale(gray)
 
     for (x,y,w,h) in faces:
-        cv2.rectangle(frame,(x,y),(x+w,y+h),(0,255,255),2)
+        cv2.rectangle(frame,(x,y),(x+w,y+h),(0,0,255),2)
         roi_gray = gray[y:y+h,x:x+w]
         roi_gray = cv2.resize(roi_gray,(96,96),interpolation=cv2.INTER_AREA)
 
@@ -38,9 +38,24 @@ while True:
             roi= np.stack([roi] * 3, axis=3)
 
             prediction = classifier.predict(roi)[0]
-            label=emotion_labels[prediction.argmax()]
-            label_position = (x,y)
-            cv2.putText(frame,label,label_position,cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
+            top3_indices = np.argsort(prediction)[-3:][::-1]
+            top3_labels = [emotion_labels[i] for i in top3_indices]
+            top3_probabilities = [prediction[i] for i in top3_indices]
+
+            for i in range(3):
+                label = top3_labels[i]
+                probability = top3_probabilities[i]
+                label_position = (x, y - 30 * (3 - i))
+
+                if i == 0:
+                    text_color = (0, 255, 0)
+
+                else:
+                    text_color = (0, 255, 255)
+
+                cv2.putText(frame, f"{label}: {probability*100:.2f}%", label_position, cv2.FONT_HERSHEY_SIMPLEX, 0.5, text_color, 2)
+
+
         else:
             cv2.putText(frame,'No Faces',(30,80),cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
     cv2.imshow('Emotion Detector',frame)
