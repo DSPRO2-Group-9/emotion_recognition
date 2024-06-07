@@ -9,13 +9,16 @@ import cv2
 import numpy as np
 
 face_classifier = cv2.CascadeClassifier("/Emotion_Recognition/src/kamera/haarcascade_frontalface_default.xml")
-classifier =load_model("/Emotion_Recognition/model/test_model.keras")
+classifier =load_model("/Emotion_Recognition/model/240606_mobilenetv2_augmentation_model.keras")
 
 emotion_labels = ['Angry','Disgust','Fear','Happy','Neutral', 'Sad', 'Surprise']
 
 
 cap = cv2.VideoCapture(0)
 
+
+def samplewise_standardization(X):
+    return (X - np.mean(X)) / np.std(X)
 
 
 while True:
@@ -32,8 +35,9 @@ while True:
 
 
         if np.sum([roi_gray])!=0:
-            roi = roi_gray.astype('float32')/255.0
+            roi = roi_gray.astype('float32')
             roi = img_to_array(roi)
+            roi = samplewise_standardization(roi)
             roi = np.expand_dims(roi,axis=0)
             roi= np.stack([roi] * 3, axis=3)
 
