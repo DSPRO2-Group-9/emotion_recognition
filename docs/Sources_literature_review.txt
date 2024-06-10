@@ -1,0 +1,11 @@
+Sources for literature review
+
+Papers linked to our datasets:
+-FER2013
+https://arxiv.org/pdf/1307.0414
+-EXPW
+https://arxiv.org/pdf/1509.03936
+
+Facial Expression Recognition 
+using Convolutional Neural Networks: State of the Art
+https://arxiv.org/pdf/1612.02903
