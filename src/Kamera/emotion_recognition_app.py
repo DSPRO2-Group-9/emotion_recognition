@@ -16,17 +16,17 @@ if getattr(sys, 'frozen', False):
     # Running as a standalone executable
     exe_dir = sys._MEIPASS
     haar_cascade_path = os.path.join(exe_dir, 'haarcascade_frontalface_default.xml')
-    model_path = os.path.join(exe_dir, '240606_mobilenetv2_augmentation_model.keras')
+    model_path = os.path.join(exe_dir, '240620_mobilenetv2_model.keras')
 else:
     # Running in development mode
     exe_dir = os.path.dirname(__file__)
     haar_cascade_path = 'C:/Emotion_Recognition/src/kamera/haarcascade_frontalface_default.xml'
-    model_path = 'C:/Emotion_Recognition/model/240606_mobilenetv2_augmentation_model.keras'
+    model_path = 'C:/Emotion_Recognition/model/240620_mobilenetv2_model.keras'
 
 
 # Construct the paths to the bundled files
 haar_cascade_path = os.path.join(exe_dir, 'haarcascade_frontalface_default.xml')
-model_path = os.path.join(exe_dir, '240606_mobilenetv2_augmentation_model.keras')
+model_path = os.path.join(exe_dir, '240620_mobilenetv2_model.keras')
 
 
 face_classifier = cv2.CascadeClassifier(haar_cascade_path)
